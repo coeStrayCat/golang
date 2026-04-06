@@ -78,8 +78,8 @@ func UpdateTodo (c *gin.Context) {
 	id := c.Param("id")
 	
 	var body struct {
-		Title string `json:"title" binding:"required"`
-		Description string `json:"description" binding:"required"`
+		Title string `json:"title"`
+		Description string `json:"description"`
 		Status string `json:"status" binding:"required"`
 	}
 	

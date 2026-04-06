@@ -3,10 +3,9 @@ package handler
 import (
     "net/http"
     "strconv"
-
     "github.com/gin-gonic/gin"
     "github.com/coeStrayCat/golang.git/internal/db"
-    
+
 )
 
 func ListUsers(c *gin.Context) {

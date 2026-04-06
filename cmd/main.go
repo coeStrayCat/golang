@@ -12,6 +12,11 @@ import (
     "github.com/coeStrayCat/golang.git/internal/handler"
 )
 
+type Person struct {
+	Name string `json:"name"`
+	Age  int    `json:"age"`
+}
+
 func main() {
 
     godotenv.Load()
@@ -53,6 +58,22 @@ func main() {
 	str := myForLoop(5)
 	fmt.Println(str)
 
+	sumResult := sum(10, 5)
+	fmt.Println("Sum:", sumResult)
+
+	subtractResult := subtract(10, 5)
+	fmt.Println("Subtract:", subtractResult)
+	
+	multiplyResult := multiply(10, 5)
+	fmt.Println("Multiply:", multiplyResult)
+	
+	divideResult, err := divide(10, 5)
+	if err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		fmt.Println("Divide:", divideResult)
+	}
+
     log.Fatal(r.Run(":" + port))
 
 }
@@ -63,5 +84,27 @@ func myForLoop(count int) string {
     }
     return "Loop completed"
 }
+
+func sum(a, b int) int{
+	return a + b
+}
+
+func subtract(a, b int) int{
+	return a - b
+}
+
+func multiply(a, b int) int{
+	return a * b
+}
+
+func divide(a, b int) (int, error){
+	if b == 0 {
+		return 0, fmt.Errorf("cannot divide by zero")
+	}
+	return a / b, nil
+}
+
+
+
 
 	
