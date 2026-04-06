@@ -6,6 +6,7 @@ import (
 
     "github.com/gin-gonic/gin"
     "github.com/coeStrayCat/golang.git/internal/db"
+    
 )
 
 func ListUsers(c *gin.Context) {
